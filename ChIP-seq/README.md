@@ -1,5 +1,5 @@
 # ChIP-seq pipeline. 
-*derived from ENCODE3 ChIP-seq pipeline
+*derived from ENCODE3 ChIP-seq pipeline*
 
 ## dependencies
 bowtie2, samtools, picard, bedtools, macs2, epic2, phantompeakqualtools  
