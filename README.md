@@ -1,2 +1,2 @@
 # seq_workflow
-The snakemake workflows for different seq
+The snakemake workflows for different seq. Continuously updated.
