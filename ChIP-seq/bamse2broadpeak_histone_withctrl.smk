@@ -94,9 +94,9 @@ rule macs2callpeak:
           p_pool = peakdir + '/{sample}_H3K4_pool_peaks.broadPeak'
     run:
         current_sample = wildcards.sample
-        shell("macs2 callpeak -t {input.t_rep1} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_rep1 --outdir {peakdir} -g {macs_g_params} -p 1e-2"
+        shell("macs2 callpeak -t {input.t_rep1} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_H3K4_rep1 --outdir {peakdir} -g {macs_g_params} -p 1e-2"
               " --nomodel --shift 0 --extsize " + str(extract_fraglen(input.cc_score_rep1)) + " -B --broad")
-        shell("macs2 callpeak -t {input.t_rep2} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_rep2 --outdir {peakdir} -g {macs_g_params} -p 1e-2"
+        shell("macs2 callpeak -t {input.t_rep2} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_H3K4_rep2 --outdir {peakdir} -g {macs_g_params} -p 1e-2"
               " --nomodel --shift 0 --extsize " + str(extract_fraglen(input.cc_score_rep2)) + " -B --broad")
         shell("macs2 callpeak -t {input.t_pool} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_pool --outdir {peakdir} -g {macs_g_params} -p 1e-2"
               " --nomodel --shift 0 --extsize " + str(extract_fraglen(input.cc_score_pool)) + " -B --broad")
