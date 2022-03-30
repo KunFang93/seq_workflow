@@ -98,7 +98,7 @@ rule macs2callpeak:
               " --nomodel --shift 0 --extsize " + str(extract_fraglen(input.cc_score_rep1)) + " -B --broad")
         shell("macs2 callpeak -t {input.t_rep2} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_H3K4_rep2 --outdir {peakdir} -g {macs_g_params} -p 1e-2"
               " --nomodel --shift 0 --extsize " + str(extract_fraglen(input.cc_score_rep2)) + " -B --broad")
-        shell("macs2 callpeak -t {input.t_pool} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_pool --outdir {peakdir} -g {macs_g_params} -p 1e-2"
+        shell("macs2 callpeak -t {input.t_pool} -c {input.t_ctrl} -f BAM -n {wildcards.sample}_H3K4_pool --outdir {peakdir} -g {macs_g_params} -p 1e-2"
               " --nomodel --shift 0 --extsize " + str(extract_fraglen(input.cc_score_pool)) + " -B --broad")
 
 rule overlappeak:
