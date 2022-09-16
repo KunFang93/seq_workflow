@@ -46,8 +46,8 @@ rule bowtie2_map:
     log:
         log_dir+ "/{sample}_bowtie2_map.log"
     shell:
-         "bowtie2 -X2000 -p {params.thread} -x {bwt2_idx} -1 {input.R1} -2 {input.R2} | "
-         "samtools sort --threads {params.thread} -O BAM  -o {output.bam_tmp1} - 2>{log}"
+         "bowtie2 -X2000 -p {params.thread} -x {bwt2_idx} -1 {input.R1} -2 {input.R2} 2>{log} | "
+         "samtools sort --threads {params.thread} -O BAM  -o {output.bam_tmp1} - "
 
 
 print("Running post mapping fitering")
@@ -90,7 +90,7 @@ rule remove_duplicates:
         # Remove duplicates
         # Index final position sorted BAM
         # Create final name sorted BAM
-        shell("mv {output.tmp_out} {input.filt_bam}")
+        # shell("mv {output.tmp_out} {input.filt_bam}")
         shell("samtools view --threads {params.thread} -F 1804 -f 2 -b {input.filt_bam} > {output.final_bam}")
         # Index Final BAM file
         shell("samtools index {output.final_bam}")
