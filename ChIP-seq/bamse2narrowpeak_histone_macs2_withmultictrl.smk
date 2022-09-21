@@ -5,7 +5,7 @@ t_bamdir = '/data/kun/modes_SFs_SEs/raw_data/tmp/GSE113092/bam'
 peakdir = '/data/kun/modes_SFs_SEs/raw_data/tmp/GSE113092/peaks'
 if not os.path.exists(peakdir):
     os.mkdir(peakdir)
-samples_prefix = glob_wildcards(os.path.join(t_bamdir,"{S}_rep1.filt.nodup.bam")).S
+samples_prefix = 'MCF7TR_H3K4me2'
 macs_g_params = 'hs'
 exclusion_range_min = -500
 threads = 40
@@ -36,7 +36,7 @@ def extract_fraglen(inputfile):
 
 rule all:
     input:
-         expand("{out_dir}/{sample}.PooledInRep1AndRep2.filt.narrowPeak", out_dir=peakdir,sample=samples_prefix)
+         expand("{out_dir}/{sample}.PooledInRep1AndRep2.filt.narrowPeak", out_dir=peakdir,sample=samples_prefix.split(' '))
 
 rule PooltCtrl:
     input:
