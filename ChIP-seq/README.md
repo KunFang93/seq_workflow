@@ -2,9 +2,9 @@
 *derived from ENCODE3 ChIP-seq pipeline*
 
 ## dependencies
-bowtie2, samtools, picard, bedtools, macs2, epic2, phantompeakqualtools  
+check env.yml, which is exported from centos7.0 conda env
 
 run  
 ```
-snakemake --cores 20 -p -s fq2bam_pe.smk
+snakemake --cores 20 -p -s Snakefile.smk
 ```
