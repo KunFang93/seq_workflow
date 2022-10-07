@@ -5,7 +5,7 @@
 check env.yml, which is exported from centos7.0 conda env
 
 ## Workflow
-<img src="https://github.com/KunFang93/seq_workflow/blob/master/ChIP-seq/ChIP-seq_pipeline_design_100622.pdf" width="900">
+<img src="https://github.com/KunFang93/seq_workflow/blob/master/ChIP-seq/workflow.tiff" width="900">
 
 ## Quick Start  
 ```
