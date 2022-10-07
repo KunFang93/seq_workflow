@@ -223,7 +223,7 @@ if config['biorep_method'] == 'pool':
          
         rule epic2_peakcalling:
             output:
-                out_dir + "/{sample}_pool." + config['peak_type'] + "Peak"
+                out_dir + "/{sample}_pool_peaks." + config['peak_type'] + "Peak"
             input:
                 trt_bam = peakcall_in,
             params:
