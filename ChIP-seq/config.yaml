@@ -1,0 +1,37 @@
+# tab-separated file of the samples
+samples_dir: /data/kun/seq_workflow/test_data/rep2_ctrl2
+samples_prefix: "GM12878_H3K36me3 GM12878_H3K27me3"
+samples_suffix: ".bam"
+ctrl_dir: /data/kun/seq_workflow/test_data/rep2_ctrl2/ctrl
+ctrl_samples: "GM12878_Input_rep1.bam GM12878_Input_rep2.bam"
+
+# pipeline file locations
+result_dir: /data/kun/seq_workflow/test_data/rep2_ctrl2/results  # where to store results
+log_dir: /data/kun/seq_workflow/test_data/rep2_ctrl2/log  # where to look for or download the genomes
+
+# fastq type
+paired_end: false
+
+# how to handle replicates
+biorep: 2
+biorep_method: "pool"  # intersect/mspc note: these two methods only work for narrowpeak with biorep > 1
+
+# filtering after peak calling
+remove_blacklist: '/data/kun/Align_Index/Blacklist/lists/hg19-blacklist.v2.bed.gz'
+samtools_flag: 1804
+
+# peak caller
+peak_type: broad
+peak_caller: 
+  # K9me3/K27me3 g5, other g2
+  epic2:
+    -gn hg19 -bin 100 -g 5 -fs 200 
+  # epic2:
+  #   -bin 100 -g 2 -fs 200
+  # macs2:
+  #   -g hs -p 1e-2
+
+
+# other parameters
+threads: 20
+exclusion_range_min: -500
