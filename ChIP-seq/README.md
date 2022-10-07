@@ -1,5 +1,5 @@
 # ChIP-seq pipeline. 
-* Customized ChIP-seq pipeline, partially derived from ENCODE ChIP-seq pipeline*
+*Customized ChIP-seq pipeline, partially derived from ENCODE ChIP-seq pipeline*
 
 ## dependencies
 check env.yml, which is exported from centos7.0 conda env
